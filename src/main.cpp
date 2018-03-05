@@ -989,6 +989,10 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 {
     int64_t nSubsidy = nCoinAge * GetCoinYearReward(pindexPrev->nHeight + 1) * 33 / (365 * 33 + 8);
 
+    if (pindexPrev->nMoneySupply + nSubsidy > 40000000 * COIN) { // limit money supply
+        nSubsidy = 0;
+    }
+
     LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
 
     return nSubsidy + nFees;
