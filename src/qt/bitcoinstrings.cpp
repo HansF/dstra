@@ -91,6 +91,9 @@ QT_TRANSLATE_NOOP("bitcoin-core", "How many blocks to check at startup (default:
 QT_TRANSLATE_NOOP("bitcoin-core", "How thorough the block verification is (0-6, default: 1)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Imports blocks from external blk000?.dat file"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Keep at most <n> MiB of unconnectable blocks in memory (default: %u)"),
+QT_TRANSLATE_NOOP("bitcoin-core", ""
+"Maximum size of data in data carrier transactions we relay and mine "
+"(default: %u)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Block creation options:"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Set minimum block size in bytes (default: 0)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Set maximum block size in bytes (default: 250000)"),
@@ -149,28 +152,12 @@ QT_TRANSLATE_NOOP("bitcoin-core", "Error: Disk space is low!"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "This is a pre-release test build - use at your own risk - do not use for "
 "mining or merchant applications"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Error"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Warning"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Information"),
-QT_TRANSLATE_NOOP("bitcoin-core", ""
-"Warning: Please check that your computer's date and time are correct! If "
-"your clock is wrong BlackCoin will not work properly."),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Unable to bind to %s on this computer. BlackCoin is probably already running."),
 QT_TRANSLATE_NOOP("bitcoin-core", "Unable to bind to %s on this computer (bind returned error %d, %s)"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Error: Wallet locked, unable to create transaction!"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Error: Wallet unlocked for staking only, unable to create transaction."),
-QT_TRANSLATE_NOOP("bitcoin-core", ""
-"Error: This transaction requires a transaction fee of at least %s because of "
-"its amount, complexity, or use of recently received funds!"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Error: Transaction creation failed!"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Sending..."),
-QT_TRANSLATE_NOOP("bitcoin-core", ""
-"Error: The transaction was rejected! This might happen if some of the coins "
-"in your wallet were already spent, such as if you used a copy of wallet.dat "
-"and coins were spent in the copy but not marked as spent here."),
-QT_TRANSLATE_NOOP("bitcoin-core", "Invalid amount"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Insufficient funds"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Error"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Warning"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Information"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "You must set rpcpassword=<password> in the configuration file:\n"
 "%s\n"
@@ -195,4 +182,20 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 "falling back to IPv4: %s"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "An error occurred while setting up the RPC port %u for listening on IPv4: %s"),
+QT_TRANSLATE_NOOP("bitcoin-core", ""
+"Warning: Please check that your computer's date and time are correct! If "
+"your clock is wrong BlackCoin will not work properly."),
+QT_TRANSLATE_NOOP("bitcoin-core", "Error: Wallet locked, unable to create transaction!"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Error: Wallet unlocked for staking only, unable to create transaction."),
+QT_TRANSLATE_NOOP("bitcoin-core", ""
+"Error: This transaction requires a transaction fee of at least %s because of "
+"its amount, complexity, or use of recently received funds!"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Error: Transaction creation failed!"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Sending..."),
+QT_TRANSLATE_NOOP("bitcoin-core", ""
+"Error: The transaction was rejected! This might happen if some of the coins "
+"in your wallet were already spent, such as if you used a copy of wallet.dat "
+"and coins were spent in the copy but not marked as spent here."),
+QT_TRANSLATE_NOOP("bitcoin-core", "Invalid amount"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Insufficient funds"),
 };
