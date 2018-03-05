@@ -55,6 +55,26 @@ inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MO
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
 static const int64_t COIN_YEAR_REWARD = 1 * CENT; // 1% per year
+inline int64_t GetCoinYearReward(int nHeight) {
+    int64_t nMult;
+
+    switch (nHeight) {
+        case 0 ... 10000:
+            nMult = 25;
+            break;
+        case 10001 ... 50000:
+            nMult = 15;
+            break;
+        case 50001 ... 100000:
+            nMult = 10;
+            break;
+        default:
+            nMult = 5;
+            break;
+    }
+
+    return COIN_YEAR_REWARD * nMult;
+}
 
 inline bool IsProtocolV1RetargetingFixed(int nHeight) { return TestNet() || nHeight > 41090; }
 inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 123270; }

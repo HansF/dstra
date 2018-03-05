@@ -971,25 +971,23 @@ static CBigNum GetProofOfStakeLimit(int nHeight)
 // miner's coin base reward
 int64_t GetProofOfWorkReward(const CBlockIndex* pindexPrev, int64_t nFees)
 {
-    int64_t nSubsidy = nFees;
+    int64_t nSubsidy;
 
-    if (pindexPrev->nHeight + 1 == 1) {
-        nSubsidy += 24000000 * COIN; // premine
+    if (pindexPrev->nHeight == 0) {
+        nSubsidy = 24000000 * COIN; // premine
+    } else {
+        nSubsidy = 0;
     }
 
     LogPrint("creation", "GetProofOfWorkReward() : create=%s nSubsidy=%d\n", FormatMoney(nSubsidy), nSubsidy);
 
-    return nSubsidy;
+    return nSubsidy + nFees;
 }
 
 // miner's coin stake reward
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 {
-    int64_t nSubsidy;
-    if (IsProtocolV3(pindexPrev->nTime))
-        nSubsidy = COIN * 3 / 2;
-    else
-        nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);
+    int64_t nSubsidy = nCoinAge * GetCoinYearReward(pindexPrev->nHeight + 1) * 33 / (365 * 33 + 8);
 
     LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
 
