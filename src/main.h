@@ -78,7 +78,7 @@ inline int64_t GetCoinYearReward(int nHeight) {
 
 inline bool IsProtocolV1RetargetingFixed(int nHeight) { return true; }
 inline bool IsProtocolV2(int nHeight) { return true; }
-inline bool IsProtocolV3(int64_t nTime) { return TestNet() || nTime > 1504224000; }
+inline bool IsProtocolV3(int64_t nTime) { return true; }
 
 inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 10 * 60; }
 inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 15; }
