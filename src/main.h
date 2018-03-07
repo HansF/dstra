@@ -76,15 +76,15 @@ inline int64_t GetCoinYearReward(int nHeight) {
     return COIN_YEAR_REWARD * nMult;
 }
 
-inline bool IsProtocolV1RetargetingFixed(int nHeight) { return TestNet() || nHeight > 41090; }
-inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 123270; }
+inline bool IsProtocolV1RetargetingFixed(int nHeight) { return true; }
+inline bool IsProtocolV2(int nHeight) { return true; }
 inline bool IsProtocolV3(int64_t nTime) { return TestNet() || nTime > 1504224000; }
 
 inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 10 * 60; }
 inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 15; }
 inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV2(nHeight) ? FutureDriftV2(nTime) : FutureDriftV1(nTime); }
 
-inline unsigned int GetTargetSpacing(int nHeight) { return 64; }
+inline unsigned int GetTargetSpacing(int nHeight) { return IsProtocolV2(nHeight) ? 64 : 60; }
 
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
