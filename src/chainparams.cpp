@@ -81,11 +81,11 @@ public:
         genesis.nVersion = 1;
         genesis.nTime    = 1519862400;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 164482;
+        genesis.nNonce   = 1356853;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000001faef25dec4fbcf906e6242621df2c183bf232f263d0ba5b101911e4563"));
-        assert(genesis.hashMerkleRoot == uint256("0x12630d16a97f24b287c8c2594dda5fb98c9e6c70fc61d44191931ea2aa08dc90"));
+        assert(hashGenesisBlock == uint256("0x0000040e10f33065095bff118fffb5e1d62678f5a988e60ed26fefa95ea9a92b"));
+        assert(genesis.hashMerkleRoot == uint256("0x717459517b3907013d606a6b8ccd6d5fd91c6b436526c833b1b97cf92df8c008"));
 
         vSeeds.emplace_back("Bounty Yakuza - shirako-jp", "dstra.seed.shirako.io");
 
@@ -135,9 +135,9 @@ public:
 
         // Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 216178;
+        genesis.nNonce = 134326;
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000724595fb3b9609d441cbfb9577615c292abf07d996d3edabc48de843642d"));
+        assert(hashGenesisBlock == uint256("0x0000478c19e3d228d9767b52d750c8ff86fc142751bd6ccf62aee9e048a18c79"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -170,11 +170,12 @@ public:
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
         genesis.nTime = 1411111111;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 2;
+        genesis.nNonce = 0;
         hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 18444;
+        nDefaultPort = 30110;
+        nRPCPort = 30111;
         strDataDir = "regtest";
-        assert(hashGenesisBlock == uint256("0x523dda6d336047722cbaf1c5dce622298af791bac21b33bf6e2d5048b2a13e3d"));
+        assert(hashGenesisBlock == uint256("0x1a4c3ef5891586e4e7bf9e30c7c3480a764f27460f36be05ddf34dd82a34b860"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
