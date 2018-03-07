@@ -87,7 +87,7 @@ public:
         assert(hashGenesisBlock == uint256("0x0000040e10f33065095bff118fffb5e1d62678f5a988e60ed26fefa95ea9a92b"));
         assert(genesis.hashMerkleRoot == uint256("0x717459517b3907013d606a6b8ccd6d5fd91c6b436526c833b1b97cf92df8c008"));
 
-        vSeeds.emplace_back("dstra.io", "master.dstra.io");
+        vSeeds.push_back("dstra.io", "master.dstra.io");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 35); // F
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 95); // f
@@ -97,7 +97,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        nLastPOWBlock = 1000;
+        nLastPOWBlock = 10000;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
