@@ -50,13 +50,13 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0x7a;
-        pchMessageStart[1] = 0x2b;
-        pchMessageStart[2] = 0xa2;
-        pchMessageStart[3] = 0xf1;
+        pchMessageStart[0] = 0x9d;
+        pchMessageStart[1] = 0xc6;
+        pchMessageStart[2] = 0x7e;
+        pchMessageStart[3] = 0x6c;
         vAlertPubKey = ParseHex("0486bce1bac0d543f104cbff2bd23680056a3b9ea05e1137d2ff90eeb5e08472eb500322593a2cb06fbf8297d7beb6cd30cb90f98153b5b7cce1493749e41e0284"); // TODO
-        nDefaultPort = 11010;
-        nRPCPort = 11011;
+        nDefaultPort = 5169;
+        nRPCPort = 5170;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -123,14 +123,14 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0xfb;
-        pchMessageStart[1] = 0xd5;
-        pchMessageStart[2] = 0xfc;
-        pchMessageStart[3] = 0xa0;
+        pchMessageStart[0] = 0x9e;
+        pchMessageStart[1] = 0x28;
+        pchMessageStart[2] = 0xc8;
+        pchMessageStart[3] = 0xe1;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
-        vAlertPubKey = ParseHex("0471dc165db490094d35cde15b1f5d755fa6ad6f2b5ed0f340e3f17f57389c3c2af113a8cbcc885bde73305a553b5640c83021128008ddf882e856336269080496");
-        nDefaultPort = 21010;
-        nRPCPort = 21011;
+        vAlertPubKey = ParseHex("0471dc165db490094d35cde15b1f5d755fa6ad6f2b5ed0f340e3f17f57389c3c2af113a8cbcc885bde73305a553b5640c83021128008ddf882e856336269080496"); // TODO
+        nDefaultPort = 6169;
+        nRPCPort = 6170;
         strDataDir = "testnet";
 
         // Modify the testnet genesis block so the timestamp is valid for a later start.
@@ -172,8 +172,8 @@ public:
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce = 0;
         hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 31010;
-        nRPCPort = 31011;
+        nDefaultPort = 7169;
+        nRPCPort = 7170;
         strDataDir = "regtest";
         assert(hashGenesisBlock == uint256("0x1a4c3ef5891586e4e7bf9e30c7c3480a764f27460f36be05ddf34dd82a34b860"));
 
