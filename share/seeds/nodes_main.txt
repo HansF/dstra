@@ -2,8 +2,8 @@
 
 # IPv4 nodes
 150.95.137.227
+138.197.181.212
 
 # IPv6 nodes
 
 # Onion nodes
-
